@@ -14,10 +14,9 @@ class Plugin {
 
     const reactPropsDocs = [];
     for (const doc of ev.data.docs) {
-      if (doc.kind !== 'class') continue;
       if (!doc.unknown) continue;
 
-      const reactProps = doc.unknown.filter(v => v.tagName === '@reactProps');
+      const reactProps = doc.unknown.filter(v => v.tagName === '@reactprop');
       if (!reactProps.length) continue;
 
       reactPropsDocs.push({
